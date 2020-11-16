@@ -12,7 +12,7 @@ EXT		=	.hs
 #######################################################
 
 ## Sources ############################################
-MAIN		=	$(addsuffix $(EXT), DoOp)
+MAIN		=	$(addsuffix $(EXT), Main)
 
 SRC_DIR		=	./src/
 
@@ -36,7 +36,7 @@ CFLAGS		=	-Wall -Wextra
 #######################################################
 
 ## NAMES ##############################################
-BIN			=   doop
+BIN			=   pushswap_checker
 TEST_BIN	=	unit_test
 #######################################################
 
@@ -44,7 +44,7 @@ TEST_BIN	=	unit_test
 .PHONY: all
 all:	$(BIN)
 $(BIN): $(MAIN) $(SRC)
-	$(CC) -o $(BIN) $(MAIN)
+	$(CC) -o $(BIN) $(MAIN) $(SRC)
 
 .PHONY: tests_run
 tests_run: $(TEST_BIN) fclean

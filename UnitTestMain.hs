@@ -6,10 +6,10 @@
 --
 import Test.HUnit
 import PushswapFunctionTest
--- import PushswapCheckerTest
+import PushswapCheckerTest
 
 main :: IO Counts
 main = (putStrLn $ "\n\x1b[92;1m" ++ "PushSwap Function" ++ "\x1b[0m") >>
-       runTestTT testsPushSwapFunction{- >>
-       putStrLn $ "\n\x1b[92;1m" ++ "PushSwapChecker" ++ "\x1b[0m") >>
-       runTestTT testsPushSwapChecker-}
+       runTestTT testsPushSwapFunction >>
+       (putStrLn $ "\n\x1b[92;1m" ++ "PushSwap Checker" ++ "\x1b[0m") >>
+       runTestTT testsPushSwapChecker
