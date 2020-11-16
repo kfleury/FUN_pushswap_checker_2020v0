@@ -65,6 +65,20 @@ pushswapCheckerTest2 = TestCase (assertEqual name expected out)
     expected = Right True
     out = pushswapChecker ["2", "1", "3", "6", "5", "8"] ["sa", "pb", "pb", "pb", "sa", "pa", "pa", "pa"]
 
+pushswapCheckerTest3 :: Test
+pushswapCheckerTest3 = TestCase (assertEqual name expected out)
+  where
+    name = "pushswapChecker Test for <List of Number> <List of Operation>"
+    expected = Left $ "KO: ([4,5,6,7,8,432,543,3],[2,1,1])"
+    out = pushswapChecker ["2","1","3","4","5","6","7","8","432","543","1"] ["pb", "pb", "rrr", "pb", "pb", "pa", "rr"]
+
+pushswapCheckerTest4 :: Test
+pushswapCheckerTest4 = TestCase (assertEqual name expected out)
+  where
+    name = "pushswapChecker Test for <List of Number> <List of Operation>"
+    expected = Left "The arguments must only be digits"
+    out = pushswapChecker ["2", "1", "3", "6", "5", "a"] ["sa", "pb", "pb", "pb", "sa", "pa", "pa", "pa"]
+
 testsPushSwapChecker = TestList [isSortTest, isSortTest2, isOverTest, isOverTest2,
                                  makeOperationTest, makeOperationTest2, pushswapCheckerTest,
-                                 pushswapCheckerTest2]
+                                 pushswapCheckerTest2, pushswapCheckerTest3, pushswapCheckerTest4]
