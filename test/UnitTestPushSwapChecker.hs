@@ -51,6 +51,20 @@ makeOperationTest2 = TestCase (assertEqual name expected out)
     expected = ([1..5], [])
     out = makeOperation [] ([1..5], [])
 
+readArgsTest :: Test
+readArgsTest = TestCase (assertEqual name expected out)
+  where
+    name = "readArgs Test for [\"1\", \"2\", \"3\"]"
+    expected = True
+    out = readArgs ["1", "2", "3"]
+
+readArgsTest2 :: Test
+readArgsTest2 = TestCase (assertEqual name expected out)
+  where
+    name = "readArgs Test for [\"1\", \"2\", \"3\"]"
+    expected = False
+    out = readArgs ["1", "a", "3"]
+
 pushswapCheckerTest :: Test
 pushswapCheckerTest = TestCase (assertEqual name expected out)
   where

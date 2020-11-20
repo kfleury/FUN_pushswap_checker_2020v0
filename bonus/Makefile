@@ -16,8 +16,8 @@ MAIN		=	$(addsuffix $(EXT), Main)
 
 SRC_DIR		=	./src/
 
-SRC_FILES	=	PushswapChecker		\
-				PushswapFunction
+SRC_FILES	=	PushswapFunction	\
+				Pushswap			\
 
 SRC			=	$(addsuffix $(EXT), $(addprefix $(SRC_DIR), $(SRC_FILES)))
 
@@ -25,8 +25,8 @@ TEST_MAIN	=	$(addsuffix $(EXT), UnitTestMain)
 
 TEST_DIR	=	test/UnitTest
 
-TEST_FILES	=	PushSwapChecker	\
-				PushSwapFunction
+TEST_FILES	=	PushSwapFunction	\
+				PushSwap			\
 
 TEST_SRC	=	$(addsuffix .hs, $(addprefix $(TEST_DIR), $(TEST_FILES)))
 #######################################################
@@ -36,7 +36,7 @@ CFLAGS		=	-Wall -Wextra
 #######################################################
 
 ## NAMES ##############################################
-BIN			=   pushswap_checker
+BIN			=   pushswap
 TEST_BIN	=	unit_test
 #######################################################
 
